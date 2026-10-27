@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>UFLI Lesson Companion</title>
+  <link rel="stylesheet" href="sidepanel.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="picker">
+      <label class="sr-only" for="lessonSelect">Lesson</label>
+      <select id="lessonSelect"></select>
+      <div class="nudge">
+        <button id="prevLesson" class="icon-btn" title="Previous lesson" aria-label="Previous lesson">&#8249;</button>
+        <button id="nextLesson" class="icon-btn" title="Next lesson" aria-label="Next lesson">&#8250;</button>
+      </div>
+    </div>
+    <p id="lessonMeta" class="meta"></p>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button class="tab is-active" data-day="day1" role="tab">Day 1</button>
+    <button class="tab" data-day="day2" role="tab">Day 2</button>
+  </nav>
+
+  <main>
+    <section class="timer-card">
+      <div class="timer-head">
+        <span id="stepLabel" class="step-label">Step</span>
+        <span id="stepAlloc" class="step-alloc"></span>
+      </div>
+      <div id="clock" class="clock">00:00</div>
+      <div id="stepHint" class="step-hint"></div>
+      <div class="progress"><div id="progressBar" class="progress-bar"></div></div>
+      <div class="controls">
+        <button id="startPause" class="btn btn-primary">Start</button>
+        <button id="nextStep" class="btn">Next step</button>
+        <button id="resetStep" class="btn btn-quiet" title="Reset this step">Reset</button>
+      </div>
+      <div class="timer-foot">
+        <label class="check"><input type="checkbox" id="autoAdvance"> Auto-advance</label>
+        <span id="dayTotal" class="day-total"></span>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Lesson plan</h2>
+      <ol id="stepList" class="steps"></ol>
+    </section>
+
+    <section class="panel">
+      <h2>Lesson resources</h2>
+      <div id="resources" class="links"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Supplemental vocabulary</h2>
+        <label class="check"><input type="checkbox" id="vocabStepOnly"> This step only</label>
+      </div>
+      <div id="vocab" class="vocab"></div>
+    </section>
+
+    <section class="panel">
+      <h2>Practice apps</h2>
+      <div id="apps" class="links"></div>
+    </section>
+  </main>
+
+  <footer class="footnote">
+    Links open resources hosted by the UF Literacy Institute. Step times are from
+    UFLI's Lesson Planning &amp; Implementation Support guide; vocabulary is from the
+    <a href="https://ufli.education.ufl.edu/wp-content/uploads/2026/02/UFLIVocab_AllLessons.pdf" target="_blank" rel="noopener">UFLI Foundations Vocabulary Resource</a>.
+    <a id="toolboxLink" href="https://ufli.education.ufl.edu/foundations/toolbox/" target="_blank" rel="noopener">UFLI Toolbox</a>
+  </footer>
+
+  <script type="module" src="sidepanel.js"></script>
+</body>
+</html>
